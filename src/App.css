@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 }
+
+body {
+  background-color: black;
+  background-image: url(./assets/images/gameBackground.PNG);
+  background-size: 100% 99%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
