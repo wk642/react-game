@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   return (
     <>
-      <body>GAME</body>
+      <h1 style={{color: "red"}}>Game</h1>
     </>
   )
 }
