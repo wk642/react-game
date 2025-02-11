@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import './App.css'
-
+import MovesCounter from './components/MovesCounter';
+import { useState } from 'react';
+import './App.css';
 /* TODO:
 - User story 1:
 - Create a counter
@@ -13,22 +13,23 @@ import './App.css'
   - front of card
     - different images
 */ 
-function CreateCounter() {
-  const [movesCounter, setCount] = useState(0);
 
-  return (
-    <>
-      <div className="moves-counter">
-        <h3>Moves: <span className="number-of-moves">{movesCounter}</span></h3>
-      </div>
-    </>
-  )
-}
+// function MovesCounter() {
+//   const [movesCounter, setCount] = useState(0);
+
+//   return (
+//     <>
+//       <div className="moves-counter">
+//         <h3>Moves: <span className="number-of-moves">{movesCounter}</span></h3>
+//       </div>
+//     </>
+//   )
+// }
 
 function App() {
   return (
     <>
-      <CreateCounter />
+      <MovesCounter />
     </>
   )
 }
