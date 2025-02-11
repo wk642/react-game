@@ -14,23 +14,38 @@ import './App.css';
     - different images
 */ 
 
-// function MovesCounter() {
-//   const [movesCounter, setCount] = useState(0);
-
-//   return (
-//     <>
-//       <div className="moves-counter">
-//         <h3>Moves: <span className="number-of-moves">{movesCounter}</span></h3>
-//       </div>
-//     </>
-//   )
-// }
+function Card() {
+  return (
+    <>
+      <div className="card">
+        <button id="hide" onclick="Clicked()">Dog</button>
+      </div>
+    </>
+  )
+}
 
 function App() {
   return (
-    <>
-      <MovesCounter />
-    </>
+    <div className="wrapper">
+      <div className="game-content-div">
+        <div className="moves-counter-div">
+          <MovesCounter />
+        </div>
+
+        <div className="cards-div">
+          <div className="cards-row-1">
+            <Card />
+            <Card />
+            <Card />
+          </div>
+          <div className="cards-row-2">
+            <Card />
+            <Card />
+            <Card />
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
