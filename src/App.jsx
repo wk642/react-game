@@ -14,11 +14,15 @@ import './App.css';
     - different images
 */ 
 
+
 function Card() {
+  function Clicked() {
+    // alert("clicked!");
+  }
   return (
     <>
       <div className="card">
-        <button id="hide" onclick="Clicked()">Dog</button>
+        <button id="hide" onclick={Clicked()}>Dog</button>
       </div>
     </>
   )
