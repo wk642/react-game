@@ -14,10 +14,12 @@ import './App.css'
     - different images
 */ 
 function CreateCounter() {
+  const [movesCounter, setCount] = useState(0);
+
   return (
     <>
       <div className="moves-counter">
-        <h3>Moves: <span className="number-of-moves"></span></h3>
+        <h3>Moves: <span className="number-of-moves">{movesCounter}</span></h3>
       </div>
     </>
   )
