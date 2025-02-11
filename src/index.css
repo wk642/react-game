@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -64,5 +64,26 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+} */
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: black;
+    background-image: url(./assets/images/mobile-background.PNG);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-color: black;
+    background-image: url(./assets/images/gameBackground.PNG);
+    /* background-size: 100% 450%; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
   }
 }
