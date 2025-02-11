@@ -13,11 +13,20 @@ import './App.css'
   - front of card
     - different images
 */ 
+function CreateCounter() {
+  return (
+    <>
+      <div className="moves-counter">
+        <h3>Moves: <span className="number-of-moves"></span></h3>
+      </div>
+    </>
+  )
+}
 
 function App() {
   return (
     <>
-      <h1 style={{color: "red"}}>Game</h1>
+      <CreateCounter />
     </>
   )
 }
