@@ -54,6 +54,9 @@
   margin-left: 21%;
 }
 
+.name-input-div {
+  background-color: rebeccapurple;
+}
 .moves-counter-div {
   background-color:cadetblue;
   color: white;

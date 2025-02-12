@@ -1,6 +1,11 @@
-import MovesCounter from './components/MovesCounter';
+import NameInput from './components/NameInput.jsx';
+import MovesCounter from './components/MovesCounter.jsx';
+import Card from './components/Card.jsx';
+
 import { useState } from 'react';
 import './App.css';
+import { FaPlayCircle } from "react-icons/fa";
+
 /* TODO:
 - User story 1:
 - Create a counter
@@ -14,27 +19,54 @@ import './App.css';
     - different images
 */ 
 
-
-function Card() {
-  function Clicked() {
-    // alert("clicked!");
-  }
+function GetumberOfCards() {
+  const [numberOfCardsInput, setNumberOfCardsInput] = useState(0);
   return (
-    <>
-      <div className="card">
-        <button id="hide" onclick={Clicked()}>Dog</button>
-      </div>
-    </>
-  )
+    <form method="post" onSubmit={submitUserNumberOfCards}>
+      <label>Pick an even number of cards</label>
+      <input value={numberOfCardsInput} onChange={ numberOfCards => setNumberOfCardsInput(numberOfCards.target.value)} />
+    </form>
+  );
 }
 
 function App() {
+  // states
+  const [movesCount, setMovesCount] = useState(0);
+  const [cardSide, setCardSide] = useState("face-down");
+  const [matched, setMatched] = useState("not-matched");
+
+  // start game visibility
+  const [startGameVisibility, setStartGameVisibility] = useState(true);
+  const toggleStartGameVisibility = () => {
+    setStartGameVisibility(!startGameVisibility);
+  }
+
+  // user name input visibility
+  const [userNameInputVisibility, setUserInputVisibilty] = useState(true);
+  const toggleUserInputVisibility = () => {
+    setUserInputVisibilty(!userNameInputVisibility);
+  }
+
+  
+  const flipCard = () => {
+
+  }
   return (
     <div className="wrapper">
       <div className="game-content-div">
-        <div className="moves-counter-div">
-          <MovesCounter />
+        {/* I was going to do a cards counter, but instead I will do user input on name for now, and will come back to this*/}
+        {/* <div className="ask-number-of-cards">
+          <GetumberOfCards />
+        </div> */}
+        <div className="start-game-div" onClick={toggleStartGameVisibility}>
+            {startGameVisibility ? <FaPlayCircle /> : <NameInput />}
         </div>
+        <div className="name-input-div">
+          <NameInput />
+        </div>
+        {/* <div className="moves-counter-div">
+          <MovesCounter />
+        </div> */}
 
         <div className="cards-div">
           <div className="cards-row-1">
@@ -53,4 +85,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
