@@ -38,7 +38,7 @@ function App() {
   // start game visibility
   const [startGameVisibility, setStartGameVisibility] = useState(true);
   const toggleStartGameVisibility = () => {
-    setStartGameVisibility(!startGameVisibility);
+    setStartGameVisibility(false);
   }
 
   // user name input visibility
@@ -47,10 +47,6 @@ function App() {
     setUserInputVisibilty(!userNameInputVisibility);
   }
 
-  
-  const flipCard = () => {
-
-  }
   return (
     <div className="wrapper">
       <div className="game-content-div">
@@ -64,9 +60,9 @@ function App() {
         <div className="name-input-div">
           <NameInput />
         </div>
-        {/* <div className="moves-counter-div">
+        <div className="moves-counter-div">
           <MovesCounter />
-        </div> */}
+        </div>
 
         <div className="cards-div">
           <div className="cards-row-1">
