@@ -19,15 +19,15 @@ import { FaPlayCircle } from "react-icons/fa";
     - different images
 */ 
 
-function GetumberOfCards() {
-  const [numberOfCardsInput, setNumberOfCardsInput] = useState(0);
-  return (
-    <form method="post" onSubmit={submitUserNumberOfCards}>
-      <label>Pick an even number of cards</label>
-      <input value={numberOfCardsInput} onChange={ numberOfCards => setNumberOfCardsInput(numberOfCards.target.value)} />
-    </form>
-  );
-}
+// function GetumberOfCards() {
+//   const [numberOfCardsInput, setNumberOfCardsInput] = useState(0);
+//   return (
+//     <form method="post" onSubmit={submitUserNumberOfCards}>
+//       <label>Pick an even number of cards</label>
+//       <input value={numberOfCardsInput} onChange={ numberOfCards => setNumberOfCardsInput(numberOfCards.target.value)} />
+//     </form>
+//   );
+// }
 
 function App() {
   // states
@@ -41,12 +41,6 @@ function App() {
     setStartGameVisibility(false);
   }
 
-  // user name input visibility
-  const [userNameInputVisibility, setUserInputVisibilty] = useState(true);
-  const toggleUserInputVisibility = () => {
-    setUserInputVisibilty(!userNameInputVisibility);
-  }
-
   return (
     <div className="wrapper">
       <div className="game-content-div">
@@ -57,25 +51,15 @@ function App() {
         <div className="start-game-div" onClick={toggleStartGameVisibility}>
             {startGameVisibility ? <FaPlayCircle /> : <NameInput />}
         </div>
-        <div className="name-input-div">
-          <NameInput />
-        </div>
-        <div className="moves-counter-div">
-          <MovesCounter />
-        </div>
 
-        <div className="cards-div">
-          <div className="cards-row-1">
-            <Card />
-            <Card />
-            <Card />
-          </div>
-          <div className="cards-row-2">
-            <Card />
-            <Card />
-            <Card />
-          </div>
-        </div>
+        {/* <div className="name-input-div">
+          <NameInput />
+        </div> */}
+        {/* <div className="moves-counter-div">
+          <MovesCounter />
+        </div> */}
+
+        
       </div>
     </div>
   )

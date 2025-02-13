@@ -2,7 +2,9 @@ import { useState } from 'react';
 
 function Card() {
   const [visibility, setVisibility] = useState(true);
+  const [faceDownCardVisibility, setFaceDownCardVisibility] = useState(true);
 
+  // const 
   const clicked = () => {
     console.log("button clicked!" + visibility);
 
