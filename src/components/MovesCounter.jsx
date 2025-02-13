@@ -11,7 +11,11 @@ function MovesCounter(userNameInput) {
 
   return (
     <>
-      <div className="counter">{userNameInput.userNameInput} made {movesCounter} Moves: </div>
+      <div>
+        <p>Hi: {userNameInput.userNameInput}!</p>
+      </div>
+
+      <div className="counter">{userNameInput.userNameInput} made {movesCounter} Moves </div>
       <div className="cards-div">
           <div className="cards-row-1">
             <Card />

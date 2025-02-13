@@ -15,12 +15,10 @@ function NameInput() {
     setUserInputVisibilty(false);
   }
 
-  // const [submitButtonVisibility, setsubmitButtonVisibility] = useState(true)
-
   return (
     <div className="name-input-div">
       <input placeholder="What is your name?" value={userNameInput} onChange={updateName}></input>
-      <p>Hi:  {userNameInput}!</p>
+      {/* <p>Hi:  {userNameInput}!</p> */}
       <button onClick={toggleUserInputVisibility} >
         {userNameInputVisibility ? 
           ("Submit") : 
