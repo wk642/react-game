@@ -51,15 +51,6 @@ function App() {
         <div className="start-game-div" onClick={toggleStartGameVisibility}>
             {startGameVisibility ? <FaPlayCircle /> : <NameInput />}
         </div>
-
-        {/* <div className="name-input-div">
-          <NameInput />
-        </div> */}
-        {/* <div className="moves-counter-div">
-          <MovesCounter />
-        </div> */}
-
-        
       </div>
     </div>
   )

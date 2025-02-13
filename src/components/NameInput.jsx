@@ -22,7 +22,11 @@ function NameInput() {
       <input placeholder="What is your name?" value={userNameInput} onChange={updateName}></input>
       <p>Hi:  {userNameInput}!</p>
       <button onClick={toggleUserInputVisibility} >
-      {userNameInputVisibility ? "Submit": <MovesCounter />}
+        {userNameInputVisibility ? 
+          ("Submit") : 
+          ( <MovesCounter 
+              userNameInput={userNameInput}
+            />)}
       </button>
     </div>
   )

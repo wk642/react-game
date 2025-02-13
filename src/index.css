@@ -70,7 +70,7 @@ button:focus-visible {
 @import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
 
 body {
-  background-color: aqua;
+  /* background-color: aqua; */
   text-align: center;
   font-family: Lacquer;
   font-size: 100%;

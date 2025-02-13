@@ -52,14 +52,19 @@
   width: 59%;
   margin-top: 7%;
   margin-left: 21%;
+  color: whtie;
+}
+
+.FaPlayCircle {
+  color: white;
 }
 
 .name-input-div {
-  background-color: rebeccapurple;
+  /* background-color: rebeccapurple; */
 }
 .moves-counter-div {
-  background-color:cadetblue;
-  color: white;
+  /* background-color:cadetblue; */
+  /* color: white; */
   margin-top: 20%;
   font-size: 350%;
   display: flex;
@@ -69,7 +74,7 @@
 } 
 
 .cards-row-1,.cards-row-2 {
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   justify-content: center;
   width: 100%; 
@@ -78,7 +83,7 @@
 }
 
 .card {
-  background-color: brown;
+  /* background-color: brown; */
   justify-content: center;
   
   width: 15%;
