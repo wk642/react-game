@@ -1,26 +1,24 @@
 import { useState } from 'react';
 import './Card.css';
 
-function Card({updateCards, handleUserClickedCard}) {
+function Card({updateCards, handleUserClickedCard, flipped}) {
   // when user clicks on acard
   const userClickedCard = () => {
     handleUserClickedCard(updateCards);
   }
   
   return (
-    <div className="card-holder">
-      <div>
+    <div className="card">
+      <div className={flipped ? "flipped" : ""}>
         <img 
-          className="faceUpCard" 
+          className="front" 
           src={updateCards.src}
-          value={updateCards.value}
         />
 
         <img 
-          className="faceDownCard" 
+          className="back" 
           src="src/assets/images/graToku.png" 
           onClick={userClickedCard}          
-          value={updateCards.value}
         />  
       </div>
     </div>  

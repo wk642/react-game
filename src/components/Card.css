@@ -1,7 +1,31 @@
-.faceDownCard {
-  width: 35%
+.card {
+  background-color: green;
+  position: relative;
 }
 
-.faceUpCard {
-  width: 25%;
+.card img { 
+  display: block;
+}
+
+.card .front {
+  width: 15%;
+  transform: roateY(90deg);  
+  position: absolute;
+}
+
+.flipped .front {
+  width: 15%;
+  transform: rotateY(0deg);
+
+}
+
+.card .back {
+  background-color: white;
+  width: 20%;
+  transform: rotateY(0deg);
+}
+
+.flipped .back {
+  width: 20%;
+  transform: rotateY(90deg);
 }

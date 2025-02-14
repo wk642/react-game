@@ -59,9 +59,6 @@
   color: white;
 }
 
-.name-input-div {
-  /* background-color: rebeccapurple; */
-}
 .moves-counter-div {
   background-color:cadetblue; */
   color: white;
@@ -82,7 +79,7 @@
   padding: 5%;
 }
 
-.card {
+/* .card {
   background-color: brown;
   justify-content: center;
   
@@ -95,4 +92,4 @@ button {
   width: 100%;
   font-size: 150%;
   padding: -2%;
-}
+} */

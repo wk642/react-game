@@ -7,17 +7,17 @@ function NameInput() {
     { 
       "src": "src/assets/images/matching-game-strawberry.png",
       "value": "strawberry",
-      "notMatched": true
+      "matched": false
     },
     { 
       "src": "src/assets/images/matching-game-orange.png",
       "value": "orange",
-      "notMatched": true
+      "matched": false
     },
     { 
       "src": "src/assets/images/matching-game-apple.png",
       "value": "apple",
-      "notMatched": true
+      "matched": false
     }   
   ]
 
@@ -72,11 +72,11 @@ function NameInput() {
     if(userChoiceCard1 && userChoiceCard2){
       if(userChoiceCard1.value === userChoiceCard2.value){
         console.log("Match!");
-        // change the notMatch to matched
+        // change to matched
         setUpdateCards(prevUpdateCards => {
           return prevUpdateCards.map(updateCards => {
             if (updateCards.value === userChoiceCard1.value) {
-              return {...updateCards, notMatched: false}
+              return {...updateCards, matched: true}
             } else {
               return updateCards;
             }
@@ -96,7 +96,6 @@ function NameInput() {
     setUserChoiceCard2(null);
     setNumberOfMoves(numberOfMoves => numberOfMoves +1);
   }
-
   return (
     <>
       <div className="name-input-div">
@@ -123,6 +122,7 @@ function NameInput() {
             updateCards={updateCards} 
             key={updateCards.id} 
             handleUserClickedCard={handleUserClickedCard}
+            flipped={updateCards === userChoiceCard1 || updateCards === userChoiceCard2 || updateCards.matched}
           />
         ))}
       </div>
