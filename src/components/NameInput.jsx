@@ -6,15 +6,18 @@ function NameInput() {
   const cardsArray = [
     { 
       "src": "src/assets/images/matching-game-strawberry.png",
-      "value": "strawberry"    
+      "value": "strawberry",
+      "notMatched": true
     },
     { 
       "src": "src/assets/images/matching-game-orange.png",
-      "value": "orange"
+      "value": "orange",
+      "notMatched": true
     },
     { 
       "src": "src/assets/images/matching-game-apple.png",
-      "value": "apple"
+      "value": "apple",
+      "notMatched": true
     }   
   ]
 
@@ -69,6 +72,16 @@ function NameInput() {
     if(userChoiceCard1 && userChoiceCard2){
       if(userChoiceCard1.value === userChoiceCard2.value){
         console.log("Match!");
+        // change the notMatch to matched
+        setUpdateCards(prevUpdateCards => {
+          return prevUpdateCards.map(updateCards => {
+            if (updateCards.value === userChoiceCard1.value) {
+              return {...updateCards, notMatched: false}
+            } else {
+              return updateCards;
+            }
+          })
+        })
         resettingTurn();
       } else {
         console.log("Not a match!");
