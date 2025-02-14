@@ -85,7 +85,7 @@ function NameInput() {
         resettingTurn();
       } else {
         console.log("Not a match!");
-        resettingTurn();
+        setTimeout(() => resettingTurn(), 500);
       }
     }
   }, [userChoiceCard1, userChoiceCard2]);
@@ -95,7 +95,9 @@ function NameInput() {
     setUserChoiceCard1(null);
     setUserChoiceCard2(null);
     setNumberOfMoves(numberOfMoves => numberOfMoves +1);
+    console.log(`number of moves = ${numberOfMoves}`);
   }
+
   return (
     <>
       <div className="name-input-div">
@@ -105,6 +107,7 @@ function NameInput() {
             ("Submit") : 
             ( <MovesCounter 
                 userNameInput={userNameInput}
+                numberOfMoves={numberOfMoves}
               />
             )
           }

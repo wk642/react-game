@@ -10,7 +10,7 @@ function MovesCounter(userNameInput) {
 
   return (
     <>
-      <div className="counter">{userNameInput.userNameInput} made {movesCounter} Moves </div>
+      <div className="counter">{userNameInput.userNameInput} made {userNameInput.numberOfMoves} Moves </div>
     </>
   )
 }
