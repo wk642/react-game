@@ -1,6 +1,8 @@
 import MovesCounter from './components/MovesCounter';
 import { useState } from 'react';
 import './App.css';
+//I see Cards componenet referenced in the return, does it need to be imported here? 
+
 /* TODO:
 - User story 1:
 - Create a counter
@@ -22,7 +24,7 @@ function Card() {
   return (
     <>
       <div className="card">
-        <button id="hide" onclick={Clicked()}>Dog</button>
+        <button id="hide" onClick={Clicked()}>Dog</button>
       </div>
     </>
   )
