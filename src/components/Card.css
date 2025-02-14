@@ -1,3 +1,9 @@
-.card visibility{
-  /* color: blue; */
+
+
+.faceDownCard {
+  width: 35%
+}
+
+.faceUpCard {
+  width: 25%;
 }

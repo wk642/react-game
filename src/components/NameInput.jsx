@@ -6,9 +6,9 @@ function NameInput() {
 
 
 const cardsArray = [
-  { "src": "./src/assets/images/matching-game-strawberry"},
-  { "src": "./src/assets/images/matching-game-orange"},
-  { "src": "./src/assets/images/matching-game-apple"}
+  { "matchingImage": "src/assets/images/matching-game-strawberry.png"},
+  { "matchingImage": "src/assets/images/matching-game-orange.png"},
+  { "matchingImage": "src/assets/images/matching-game-apple.png"}   
 ]
 
   // update name
@@ -30,11 +30,11 @@ const cardsArray = [
 
   // sorting the cards
   const sortingCards = () => {
-    //sort the images twice
+    //sort the images twice to make the pairs
     const sortingCards = [...cardsArray, ...cardsArray]
       // generate a random number to move the cards around
       .sort(() => Math.random() - 0.5)
-      .map((card) => ({...card, id: Math.random()}));
+      .map((updateCards) => ({...updateCards, id: Math.random()}));
 
       setUpdateCards(sortingCards);
       setNumberOfMoves(0);
@@ -42,21 +42,32 @@ const cardsArray = [
   console.log(updateCards, numberOfMoves);
 
   return (
-    <div className="name-input-div">
-      <input placeholder="What is your name?" value={userNameInput} onChange={updateName}></input>
-      <button onClick={toggleUserInputVisibility} >
-        {userNameInputVisibility ? 
-          ("Submit") : 
-          ( <MovesCounter 
-              userNameInput={userNameInput}
-            />)}
-      </button>
+    <>
+      <div className="name-input-div">
+        <input placeholder="What is your name?" value={userNameInput} onChange={updateName}></input>
+        <button onClick={toggleUserInputVisibility} >
+          {userNameInputVisibility ? 
+            ("Submit") : 
+            ( <MovesCounter 
+                userNameInput={userNameInput}
+              />
+            )
+          }
+        </button>
 
-      {/*can't seem to get both of these things done in one button, so splitting up the buttons*/}
-      <button onClick={sortingCards} >
-        Start Game
-      </button>
-    </div>
+        {/*can't seem to get both of these things done in one button, so splitting up the buttons*/}
+        <button onClick={sortingCards} >
+          Start Game
+        </button>
+      </div>
+
+      <div className="card-div">
+        {updateCards.map(updateCards => (
+          <Card updateCards={updateCards} key={updateCards.id}/>
+        ))}
+      </div>
+    </>
+    
   )
 }
 
