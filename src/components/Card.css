@@ -4,7 +4,7 @@
 }
 
 .card img { 
-  display: block;
+  display: inline-block;
 }
 
 .card .front {
