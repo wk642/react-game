@@ -1,12 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MovesCounter from './MovesCounter';
 import Card from './Card';
 
 function NameInput() {
   const cardsArray = [
-    { "matchingImage": "src/assets/images/matching-game-strawberry.png"},
-    { "matchingImage": "src/assets/images/matching-game-orange.png"},
-    { "matchingImage": "src/assets/images/matching-game-apple.png"}   
+    { 
+      "src": "src/assets/images/matching-game-strawberry.png",
+      "value": "strawberry"    
+    },
+    { 
+      "src": "src/assets/images/matching-game-orange.png",
+      "value": "orange"
+    },
+    { 
+      "src": "src/assets/images/matching-game-apple.png",
+      "value": "apple"
+    }   
   ]
 
   // update name
@@ -25,7 +34,7 @@ function NameInput() {
   const [updateCards, setUpdateCards] = useState([]);
 
   // store user choices of cards for matching
-  const [userChocieCard1, setUserChoiceCard1] = useState(null);
+  const [userChoiceCard1, setUserChoiceCard1] = useState(null);
   const [userChoiceCard2, setUserChoiceCard2] = useState(null);
 
   // store moves 
@@ -43,19 +52,38 @@ function NameInput() {
       setNumberOfMoves(0);
   }
 
-  // storing the cards for comparisson for matching
-  const handleUserClickedCard = () => {
-    if (userChocieCard1 === null)  {
+  // storing the the two cards for comparisson for matching
+  const handleUserClickedCard = (updateCards) => {
+    if (userChoiceCard1 === null)  {
       setUserChoiceCard1(updateCards);
-    } 
-    if (userChoiceCard2 === null) {
+    } else {
       setUserChoiceCard2(updateCards);
     }
-    if (userChoiceCard2 !=  null){
-      alert("wait");
-    }
-    console.log(`Choice 1: ${userChocieCard1} Choice 2: ${userChoiceCard2}`);
+    console.log(updateCards.src);
+    console.log(updateCards)
+    console.log(`updated: ${userChoiceCard1}`)
   }
+
+  // comparing the two cards
+  useEffect(() => {
+    if(userChoiceCard1 && userChoiceCard2){
+      if(userChoiceCard1.value === userChoiceCard2.value){
+        console.log("Match!");
+        resettingTurn();
+      } else {
+        console.log("Not a match!");
+        resettingTurn();
+      }
+    }
+  }, [userChoiceCard1, userChoiceCard2]);
+
+  // reset the comparisson after every turn
+  const resettingTurn = () => {
+    setUserChoiceCard1(null);
+    setUserChoiceCard2(null);
+    setNumberOfMoves(numberOfMoves => numberOfMoves +1);
+  }
+
   return (
     <>
       <div className="name-input-div">
@@ -78,7 +106,11 @@ function NameInput() {
 
       <div className="card-div">
         {updateCards.map(updateCards => (
-          <Card updateCards={updateCards} key={updateCards.id} handleUserClickedCard={handleUserClickedCard}/>
+          <Card 
+            updateCards={updateCards} 
+            key={updateCards.id} 
+            handleUserClickedCard={handleUserClickedCard}
+          />
         ))}
       </div>
     </>
