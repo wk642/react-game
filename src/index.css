@@ -24,6 +24,6 @@ body {
     /* background-size: 100% 450%; */
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 }
