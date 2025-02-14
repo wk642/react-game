@@ -3,13 +3,11 @@ import MovesCounter from './MovesCounter';
 import Card from './Card';
 
 function NameInput() {
-
-
-const cardsArray = [
-  { "matchingImage": "src/assets/images/matching-game-strawberry.png"},
-  { "matchingImage": "src/assets/images/matching-game-orange.png"},
-  { "matchingImage": "src/assets/images/matching-game-apple.png"}   
-]
+  const cardsArray = [
+    { "matchingImage": "src/assets/images/matching-game-strawberry.png"},
+    { "matchingImage": "src/assets/images/matching-game-orange.png"},
+    { "matchingImage": "src/assets/images/matching-game-apple.png"}   
+  ]
 
   // update name
   const [userNameInput, setUserNameInput] = useState();
@@ -25,6 +23,11 @@ const cardsArray = [
 
   // storing the sorted cards
   const [updateCards, setUpdateCards] = useState([]);
+
+  // store user choices of cards for matching
+  const [userChocieCard1, setUserChoiceCard1] = useState(null);
+  const [userChoiceCard2, setUserChoiceCard2] = useState(null);
+
   // store moves 
   const [numberOfMoves, setNumberOfMoves] = useState(0);
 
@@ -39,8 +42,20 @@ const cardsArray = [
       setUpdateCards(sortingCards);
       setNumberOfMoves(0);
   }
-  console.log(updateCards, numberOfMoves);
 
+  // storing the cards for comparisson for matching
+  const handleUserClickedCard = () => {
+    if (userChocieCard1 === null)  {
+      setUserChoiceCard1(updateCards);
+    } 
+    if (userChoiceCard2 === null) {
+      setUserChoiceCard2(updateCards);
+    }
+    if (userChoiceCard2 !=  null){
+      alert("wait");
+    }
+    console.log(`Choice 1: ${userChocieCard1} Choice 2: ${userChoiceCard2}`);
+  }
   return (
     <>
       <div className="name-input-div">
@@ -63,7 +78,7 @@ const cardsArray = [
 
       <div className="card-div">
         {updateCards.map(updateCards => (
-          <Card updateCards={updateCards} key={updateCards.id}/>
+          <Card updateCards={updateCards} key={updateCards.id} handleUserClickedCard={handleUserClickedCard}/>
         ))}
       </div>
     </>
