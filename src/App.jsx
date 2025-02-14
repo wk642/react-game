@@ -4,6 +4,7 @@ import './App.css';
 
 
 
+
 function Card() {
   function Clicked() {
     // alert("clicked!");
@@ -11,7 +12,7 @@ function Card() {
   return (
     <>
       <div className="card">
-        <button id="hide" onclick={Clicked()}>Dog</button>
+        <button id="hide" onClick={Clicked()}>Dog</button>
       </div>
     </>
   )
