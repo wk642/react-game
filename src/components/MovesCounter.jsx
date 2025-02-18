@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import React from 'react';
 // import Card from './Card';
 import NameInput from './NameInput'
 
-function MovesCounter(userNameInput) {
+function MovesCounter({ userNameInput, numberOfMoves }) {
+  if (userNameInput === null || numberOfMoves === null) {
+    throw new Error('userNameInput and numberOfMoves must not be null');
+  }
+
   return (
     <>
-      <div className="counter">{userNameInput.userNameInput} made {userNameInput.numberOfMoves} Moves </div>
+    <NameInput /> 
+      <div className="counter">{userNameInput} made {numberOfMoves} Moves </div>
     </>
   )
 }
