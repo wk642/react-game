@@ -23,7 +23,12 @@ function App() {
     <div className="wrapper">
       <div className="game-content-div">
         <div className="start-game-div" onClick={toggleStartGameVisibility}>
-            {startGameVisibility ? <FaPlayCircle /> : <NameInput />}
+            {startGameVisibility ? 
+            <div className="playButton">
+              <FaPlayCircle  size="6em" /> 
+            </div>
+            
+            : <NameInput />}
         </div>
       </div>
     </div>
