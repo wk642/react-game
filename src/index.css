@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+
+body {
+  /* background-color: aqua; */
+  text-align: center;
+  font-family: Lacquer;
+  font-size: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: black;
+    background-image: url(./assets/images/mobile-background.PNG);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /* overflow: hidden; */
+  }
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-color: black;
+    background-image: url(./assets/images/gameBackground.PNG);
+    /* background-size: 100% 450%; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+}

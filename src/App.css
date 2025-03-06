@@ -1,0 +1,33 @@
+ .wrapper {
+  margin: 0, auto;
+  /* background-color: yellow; */
+ }
+
+.game-content-div {
+  background-color: rgb(232, 146, 225);
+  width: 59%;
+  margin-top: 7%;
+  margin-left: 21%;
+  color: whtie;
+}
+
+.FaPlayCircle {
+  color: white;
+}
+
+.moves-counter-div {
+  /* background-color:cadetblue; */ 
+  color: white;
+  margin-top: 20%;
+  font-size: 350%;
+  display: flex;
+  margin: 0, auto;
+  justify-content: center;
+
+} 
+
+button {
+  width: 100%;
+  font-size: 150%;
+  padding: -2%;
+}
