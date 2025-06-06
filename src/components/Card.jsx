@@ -8,6 +8,7 @@ function Card({updateCards, handleUserClickedCard, flipped}) {
   }
   
   return (
+    <div className="card-container">
     <div className="card">
       <div className={flipped ? "flipped" : ""}>
         <img 
@@ -22,6 +23,7 @@ function Card({updateCards, handleUserClickedCard, flipped}) {
         />  
       </div>
     </div>  
+    </div>
   );
 };
 

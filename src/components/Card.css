@@ -1,31 +1,36 @@
-.card {
-  /* background-color: green; */
-  position: relative;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
-.card img { 
-  display: inline-block;
+.card {
+  /* Exactly 3 cards per row, accounting for padding */
+  width: calc(33.333% - 20px); 
+  margin: 10px;
+  box-sizing: border-box;
+  perspective: 1000px;
+  height: 200px; 
+  position: relative; 
+}
+
+.card .flipped {
+  transform: rotateY(180deg);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .card .front {
-  width: 15%;
-  transform: roateY(90deg);  
-  position: absolute;
-}
-
-.flipped .front {
-  width: 15%;
-  transform: rotateY(0deg);
-
+  transform: rotateY(180deg);
 }
 
 .card .back {
-  background-color: white;
-  width: 20%;
-  transform: rotateY(0deg);
-}
-
-.flipped .back {
-  width: 20%;
-  transform: rotateY(90deg)
+  /* No initial rotation */
 }
