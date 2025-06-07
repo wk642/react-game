@@ -8,10 +8,10 @@
   /* Exactly 3 cards per row, accounting for padding */
   width: calc(33.333% - 20px); 
   margin: 10px;
-  box-sizing: border-box;
+  /* box-sizing: border-box;
   perspective: 1000px;
   height: 200px; 
-  position: relative; 
+  position: relative;  */
 }
 
 .card .flipped {
