@@ -1,6 +1,6 @@
-import NameInput from './components/NameInput.jsx';
-import MovesCounter from './components/MovesCounter.jsx';
-import Card from './components/Card.jsx';
+import NameInput from './components/NameInput';
+import MovesCounter from './components/MovesCounter';
+import Card from './components/Card';
 
 import { useState } from 'react';
 import './App.css';
